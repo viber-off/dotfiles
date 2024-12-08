@@ -191,8 +191,54 @@ mode "resize" {
 				bindsym $mod+r mode "default"
 }
 
+
 bindsym $mod+r mode "resize"
 
 default_border pixel 0
 
-# Paste here the theme for i3
+# set primary Rosé Pine colorscheme colors
+set $base           #191724
+set $surface        #1f1d2e
+set $overlay        #26233a
+set $muted          #6e6a86
+set $subtle         #908caa
+set $text           #e0def4
+set $love           #eb6f92
+set $gold           #f6c177
+set $rose           #ebbcba
+set $pine           #31748f
+set $foam           #9ccfd8
+set $iris           #c4a7e7
+set $highlightlow   #21202e
+set $highlightmed   #403d52
+set $highlighthigh  #524f67
+
+# Teming border and Windows --------------
+# target                 title     bg    text   indicator  border
+client.focused           $rose     $base $text  $rose      $rose
+client.focused_inactive  $text     $base $text  $subtle    $surface
+client.unfocused         $text     $base $text  $overlay   $overlay
+client.urgent            $text     $base $text  $love      $love
+client.placeholder       $base     $base $text  $overlay   $overlay
+client.background        $base
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+        tray_output primary
+	font pango:Caskaydia Mono Nerd Font 10 
+	
+	 colors {
+		background $surface           # Background color
+		statusline $text              # Statusline text color
+		separator $surface              # Separator color
+
+		# Workspaces
+		focused_workspace $surface $surface $love       # Focused workspace with Love accent
+		active_workspace  $surface $surface $gold       # Active workspace with Gold accent
+		inactive_workspace $surface $surface $subtle  # Inactive workspace with Subtle accent
+		urgent_workspace   $surface $overlay $rose     # Urgent workspace with Rose accent
+    	}
+}
