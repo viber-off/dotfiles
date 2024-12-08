@@ -1,0 +1,7 @@
+[general]
+import = ["~/.config/alacritty/theme.toml"]
+
+# Font configuration goes here
+[font]
+normal = { family = "JetBrains Mono Nerd Font" }
+size = 16
