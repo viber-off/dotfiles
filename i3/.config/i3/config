@@ -191,9 +191,6 @@ mode "resize" {
 				bindsym $mod+r mode "default"
 }
 
-exec killall polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 bindsym $mod+r mode "resize"
 
 default_border pixel 0
